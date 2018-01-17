@@ -85,6 +85,79 @@
 }
 
 
+.interview * {
+    box-sizing: border-box;
+}
+
+.interview-item {
+    margin-bottom: 20px;
+
+}
+
+.interview-item__title {
+    margin-bottom: 14px;
+
+}
+
+.interview-item__body::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.interview-item__rating {
+    float: left;
+    width: 80%;
+    padding:  34px 58px;
+    background-color: #f5f6fa;
+}
+
+
+.interview-item__value {
+    width: 20%;
+    float: right;
+    padding:  34px 58px;
+    text-align:  center;
+    line-height: 60px;
+    font-size:  14px;
+    color: #3aa16b;
+    background-color: #f5f6fa;
+    text-transform: uppercase;
+    border-left:  2px solid #fff;
+}
+
+/* range slider */
+
+.irs-bar, 
+.irs-bar-edge {
+    background: #3aa16b;
+}
+
+.irs-slider {
+    border-radius: 50px;
+    background: #3aa16b;
+    width: 18px;
+    height: 18px;
+}
+
+.irs-line-mid, 
+.irs-line-left, 
+.irs-line-right {
+    background: #d2e2d9;
+}
+
+.irs-single {
+    background: #3aa16b;
+}
+
+.irs-from:after, 
+.irs-to:after, 
+.irs-single:after {
+    border-top-color: #3aa16b ;
+}
+
+
+
 /*timeline*/
 
 
