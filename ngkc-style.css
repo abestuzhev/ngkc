@@ -126,11 +126,23 @@
     border-left:  2px solid #fff;
 }
 
+.interview-item__message {
+
+}
+
+.interview-item__message textarea {
+    width: 100%;
+}
+
 /* range slider */
 
 .irs-bar, 
 .irs-bar-edge {
     background: #3aa16b;
+}
+.irs-bar-edge {
+    border-radius: 6px 0 0 6px;
+
 }
 
 .irs-slider {
@@ -144,7 +156,9 @@
 .irs-line-left, 
 .irs-line-right {
     background: #d2e2d9;
+    border-radius: 6px;
 }
+
 
 .irs-single {
     background: #3aa16b;
