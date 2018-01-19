@@ -1,62 +1,64 @@
-$(function(){
-	$(".range-slider").ionRangeSlider({
-	    grid: true,
-	    from: 3,
-	    values: [1, 2, 3, 4, 5,6, 7, 8, 9, 10]
-	});
+$(function () {
+    $(".range-slider").ionRangeSlider({
+        grid: true,
+        from: 3,
+        values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    });
 
 
-	
-	// var $slide_1 = $('#int-info'),
-	// 	$slide_1_value = $('#int-info').val(),
-	// 	$slide_1_parent = $slide_1.parents('.interview-item__body').find('.interview-item__value').children('span');
+    // var $slide_1 = $('#int-info'),
+    // 	$slide_1_value = $('#int-info').val(),
+    // 	$slide_1_parent = $slide_1.parents('.interview-item__body').find('.interview-item__value').children('span');
 
-	// $slide_1_parent.html($slide_1_value);
-
-
-	
-
-	function addText(elem){
-
-		
-		var elem = $(elem).val();
-		var numHtml = $(elem).parents('.interview-item__body').find('.interview-item__value').find('.interview-value');
-		var textHtml = $(elem).parents('.interview-item__body').find('.interview-item__value').find('.interview-value-txt');
-		
-		var $word = wordChange(elem);
-
-		function wordChange (number){
-			switch (number) {
-				case 1:
-					$word = "балл";
-					break;
-				case 2:
-				case 3:
-				case 4:
-					$word = "балла";
-					break;
-				default: 
-					$word = "баллов";
-			}
-			return $word;
-		}
+    // $slide_1_parent.html($slide_1_value);
 
 
-		numHtml.html(elem);
-		textHtml.html($word);
+    function addText(elem) {
 
-	}
 
-	addText('#int-info');
+        var inputValue = +$(elem).val();
+        var numHtml = $(elem).parents('.interview-item__rating').siblings('.interview-item__value').children('.interview-value');
+        var textHtml = $(elem).parents('.interview-item__rating').siblings('.interview-item__value').children('.interview-value-txt');
 
-	
+        var $word = wordChange(inputValue);
 
-	$('#int-info').on('change', function(){
-		// $slide_1_value = $(this).val();
-		// console.log($slide_1_value);
+        function wordChange(number) {
+            switch (number) {
+                case 1:
+                    $word = "балл";
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    $word = "балла";
+                    break;
+                default:
+                    $word = "баллов";
+            }
+            return $word;
+        }
+        numHtml.html(inputValue);
+        textHtml.html($word);
 
-		// $slide_1_parent.html($slide_1_value);
-		addText('#int-info');
-	});
+    }
+
+    addText('#int-info');
+    addText('#int-service');
+    addText('#int-worker');
+
+
+    $('#int-info').on('change', function () {
+        addText(this);
+    });
+
+    $('#int-service').on('change', function () {
+        addText(this);
+    });
+
+    $('#int-worker').on('change', function () {
+        addText(this);
+    });
+
+
 
 });

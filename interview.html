@@ -6,7 +6,7 @@
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <link href="./bitrix/templates/creative_mibok_s2/css/kernel_main.css" type="text/css" rel="stylesheet"/>
+    <!--<link href="./bitrix/templates/creative_mibok_s2/css/kernel_main.css" type="text/css" rel="stylesheet"/>-->
     <link href="template-style.css" type="text/css" data-template-style="true" rel="stylesheet"/>
     
     <!--new style-->
@@ -97,9 +97,11 @@
     
     
     <div class="container">
+        <ol class="breadcrumb"><li><a href="/" title="Главная">Главная</a></li><li class="active">Опрос</li></ol>
+
         <div class="row">
             <div class="col-lg-12">
-                <div class="interview">
+                <form class="interview">
                     <form action="#" method="" class="interview-list">
                         <div class="interview-item">
                             <div class="interview-item__title">1. Открытость и доступность информации о МУК НГКЦ</div>
@@ -107,7 +109,7 @@
                                 <div class="interview-item__rating">
                                     <input type="text" class="range-slider" id="int-info" name="int-info" value="" />
                                 </div>
-                                <div class="interview-item__value"><span class="interview-value"></span> <span class="interview-value-txt"></span></div>
+                                <div class="interview-item__value"><span class="interview-value">4</span> <span class="interview-value-txt">балла</span></div>
                             </div>
                             
                         </div>
@@ -117,7 +119,7 @@
                                 <div class="interview-item__rating">
                                     <input type="text" class="range-slider" id="int-service" name="int-service" value="" />
                                 </div>
-                                <div class="interview-item__value"><span class="interview-value"></span> <span class="interview-value-txt"></span></div>
+                                <div class="interview-item__value"><span class="interview-value">4</span> <span class="interview-value-txt">балла</span></div>
                             </div>
                             
                         </div>
@@ -127,7 +129,7 @@
                                 <div class="interview-item__rating">
                                     <input type="text" class="range-slider" id="int-worker" name="int-worker" value="" />
                                 </div>
-                                <div class="interview-item__value"><span></span> </div>
+                                <div class="interview-item__value"><span class="interview-value">4</span> <span class="interview-value-txt">балла</span></div>
                             </div>
                             
                         </div>
@@ -137,7 +139,7 @@
                                 <textarea name="int-message" id="int-message" rows="10"></textarea>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

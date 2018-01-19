@@ -85,6 +85,9 @@
 }
 
 
+.interview {
+    margin-top: 30px;
+}
 .interview * {
     box-sizing: border-box;
 }
@@ -445,4 +448,134 @@
 
 .timelineLight .t_right:hover {
     background: url('img/big-arrow.png') no-repeat right bottom;
+}
+
+
+/*event--------------------------------------*/
+.event {
+    margin: 20px 0;
+}
+
+.event-nav {
+    padding: 18px 0;
+    position: relative;
+}
+.event-nav__arrow {
+    color: #343434;
+    font-size: 14px;
+    transition: all .2s ease-out;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+}
+.event-nav__arrow:hover {
+    color: #3aa16b;
+    text-decoration: none;
+    transition: all .2s ease-out;
+}
+.event-nav__arrow:hover svg{
+    fill: #3aa16b;
+}
+.event-nav__prev .c-symbol {
+    margin-right: 12px;
+}
+.event-nav__next .c-symbol {
+    margin-left: 12px;
+}
+.event-nav__prev {
+    left: 0;
+}
+.event-nav__next {
+    right: 0;
+}
+
+.event-nav__title {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.event-date {
+    background-color: #3aa16b;
+    padding: 10px 0;
+    text-align: center;
+}
+.event-date i {
+    margin-right: 4px;
+}
+.event-date__number {
+    font-size: 14px;
+    color: #ffffff;
+}
+.event-content {
+    background-color: #f5f6fa;
+    padding: 21px;
+}
+.event-content::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.event-content__img {
+    max-width: 330px;
+    float: left;
+    margin-right: 25px;
+}
+.event-content_text p {
+    color: #343434;
+    margin-bottom: 22px;
+    line-height: 1.1;
+}
+
+/*icons*/
+.c-symbol {
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+}
+.c-symbol:hover {
+    fill: #3aa16b;
+}
+.symbol-arrow-left,
+.symbol-arrow-right {
+    font-size: 1px;
+    width: 7em;
+    height: 13em;
+    margin-top: -2px;
+}
+
+.icon-calendar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 20px;
+    background: url(./bitrix/templates/creative_mibok_s2/img/icon-calendar.svg) 0 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 980px) {
+    .event-nav {
+        padding-bottom: 35px;
+    }
+    .event-nav__arrow {
+        top: auto;
+        bottom: 6px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .event-content__img {
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .event-content__img img {
+        width: 100%;
+        height: auto;
+    }
 }
