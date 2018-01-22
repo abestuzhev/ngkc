@@ -130,12 +130,61 @@
 }
 
 .interview-item__message {
-
+    padding: 28px 26px 24px;
+    box-sizing: border-box;
+    background: url(./bitrix/templates/creative_mibok_s2/img/bg-message.png) 0 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .interview-item__message textarea {
     width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: none;
+    outline: none;
 }
+
+.interview-item__message span {
+    color: #ffffff;
+    font-size: 13px;
+    text-align: left;
+}
+
+.interview-item__message .l-button {
+    text-align: justify;
+    font-size: 0;
+}
+
+.interview-item__message .l-button::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.interview-item__message .form-btn {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 10px 32px;
+    background-color: #3aa16b;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    font-weight: 700;
+}
+.interview-item__message .form-btn:hover {
+    opacity: .8;
+}
+
+.interview-item__message .form-text {
+    display: inline-block;
+    text-align: left;
+}
+
+
 
 /* range slider */
 
@@ -449,6 +498,97 @@
 .timelineLight .t_right:hover {
     background: url('img/big-arrow.png') no-repeat right bottom;
 }
+
+/* -----------------------------------------------------------------------*/
+/* ------------------------------ RESPONSIVE -----------------------------*/
+/* -----------------------------------------------------------------------*/
+
+
+
+/* --- 768px --- */
+@media screen and (max-width:980px) {
+
+    .timelineLight .timeline_line {
+        width:680px;
+    }
+
+    .timelineLight .t_line_view {
+        width:680px;
+    }
+
+    .timelineLight .t_line_m {
+        width: 338px;
+    }
+    .timelineLight .t_line_m.right {
+        left: 339px;
+        width: 339px;
+    }
+}
+
+
+/* --- 610px --- */
+@media screen and (max-width:767px) {
+
+    .timelineLight .timeline_line {
+        width:530px;
+    }
+
+    .timelineLight .t_line_view {
+        width:1060px;
+    }
+
+    .timelineLight .t_line_m {
+        width: 528px;
+    }
+    .timelineLight .t_line_m.right {
+        left: 530px;
+        width: 528px;
+    }
+
+    .timelineLight .t_line_node span {
+
+    }
+    .timelineLight .t_node_desc {
+        font-size:8px;
+    }
+    .timelineLight .t_line_m.right .t_node_desc {
+        right:auto;
+        left:0;
+    }
+}
+
+
+/* --- 300px --- */
+@media screen and (max-width:609px) {
+    .timelineLight .timeline_line {
+        width:240px;
+    }
+
+    .timelineLight .t_line_view {
+        width:480px;
+    }
+
+    .timelineLight .t_line_m {
+        width: 238px;
+    }
+    .timelineLight .t_line_m.right {
+        left: 240px;
+        width: 238px;
+    }
+
+    .timelineLight .item_open {
+        width:280px;
+        height:390px;
+    }
+    .timelineLight .item_open img {
+        max-width:280px;
+    }
+    .timelineLight .item_open_cwrapper {
+        width:280px;
+    }
+}
+
+
 
 
 /*event--------------------------------------*/

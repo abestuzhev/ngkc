@@ -1,4 +1,18 @@
 $(function () {
+
+
+
+
+    // light
+    // $('.timelineLight').timeline({
+    //     openTriggerClass : '.read_more',
+    //     startItem : '15/08/2012'
+    // });
+
+
+
+
+
     $(".range-slider").ionRangeSlider({
         grid: true,
         from: 3,
