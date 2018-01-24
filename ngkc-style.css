@@ -482,6 +482,14 @@
     top: 48%;
 }
 
+.l-button__right {
+    text-align: right;
+}
+
+.l-button__right .open_content_btn {
+    color: #3aa16b;
+}
+
 @media screen and (max-width: 980px) {
     .event-nav {
         padding-bottom: 35px;
