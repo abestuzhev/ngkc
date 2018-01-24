@@ -1,391 +1,164 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Главная</title>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="robots" content="index, follow"/>
-    <!--<link href="./bitrix/templates/creative_mibok_s2/css/kernel_main.css" type="text/css" rel="stylesheet"/>-->
-    <link href="template-style.css" type="text/css" data-template-style="true" rel="stylesheet"/>
-    
-    <!--new style-->
-    <link href="ngkc-style.css" type="text/css" data-template-style="true" rel="stylesheet"/>
-    <!--END new style-->
-    
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    
-    
-    <script type="text/javascript" src="template-script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel='icon' type='image/png' href='/favicon.ico'>
-    
-    
-    <!--[if lt IE 9]>
-    <![endif]-->
-    <style data-mode='action_style'></style>
-    <script src="./bitrix/templates/creative_mibok_s2/js/jquery.timeline.min.js"></script>
+    <title>Cписок страниц НГКЦ</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <!--[if lt IE 10]><script src="js/IE9.js"></script><![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+<style>
+    html {
+      min-height: 100%;
+    }
+
+    body {
+        color: #292929;
+        padding: 0;
+        margin: 0;
+        min-height: 100%;
+        font: 16px/32px 'Roboto', sans-serif;
+        background: url('body-bg.jpg') repeat;
+
+    }
+
+    /*.bg {
+      width: 100%;
+      min-height: 100%;
+
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+    }*/
+
+
+
+    h1 {
+        color: #292929;
+        margin: 0 0 20px;
+        padding-bottom: 10px;
+        font-size: 28px;
+        border-bottom: 1px solid #292929;
+        font-weight: 700;
+        font-family: Roboto, Arial, sans-serif;
+    }
+
+    ol {
+        padding: 0;
+        list-style-position: inside;
+    }
+
+    .item {
+      position: relative;
+      padding-left: 25px;
+      color: #292929;
+      font-size: 1em;
+      margin: 0;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+	.block-date {
+		border: 1px solid #eee;
+		border-radius: 2px;
+		padding-top: 10px;
+		margin-bottom: 10px;
+	}
+	.block-date_title {
+		font-size: 10px;
+		line-height: 1;
+		padding-left: 25px;
+		margin-bottom: 10px;
+	}
+
+    .corrected::before {
+      content: '⌘';
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #292929;
+    }
+
+    .disable {
+      opacity: .6;
+      cursor: default;
+    }
+
+    .disable:hover {
+      color: #292929;
+      opacity: .6;
+      text-decoration: none;
+    }
+
+
+    section {
+        margin: 50px auto;
+        max-width: 400px;
+        /*background: rgba(255, 255, 255, .95);*/
+        background-color: #fff;
+        padding: 40px 60px;
+        /*padding-left: 0;*/
+        border-radius: 6px;
+        box-shadow: 0 20px 20px rgba(0,0,0,.2)
+    }
+
+    @media screen and (max-width: 700px) {
+      section {
+        width: 100%;
+        padding: 10px;
+        max-width: none;
+      }
+
+      .item {
+        padding: 0;
+      }
+
+    body {
+        background: none !important;
+    }
+    }
+
+    a {
+        text-decoration: none;
+        color: #292929;
+        font-weight: 500;
+    }
+
+    a:hover { color: #8dc746; text-decoration: underline;}
+
+    .logo {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #333;
+    }
+</style>
 </head>
+
 <body>
-<div id="panel"></div>
+  <div class="bg"></div>
 
-<div id="wrapper">
-    <header class="l-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="l-header-wrapper clearfix">
-                        <div class="l-header-info">
-                            <div class="l-header-info-time">
-                                 Время работы: Пн-Вс 08-20
-                            </div>
-                            <div class="l-header-info-tel">
-                                +7 (495) 000-00-00
-                            </div>
-                            <a href="#" class="l-header-quality">Оценка качества</a>
-                        </div>
-                        <div class="l-header-version">
-                            <button class="">Aa</button>
-                            <span itemprop="Copy"><a href="?special_version=Y"><br> Версия для слабовидящих</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <div class="l-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="clearfix l-menu-wrapper">
-                        <a href="/" class="l-menu-logo">
-                            <img width="258" alt="" src="./bitrix/templates/creative_mibok_s2/img/logo.jpg" height="53" title="" align="left">
-                            <!--<div class="l-menu-logo-text">Happy people</div>-->
-                            <!--<br>-->
-                            <!--<div class="l-menu-logo-text-min">Êóëüòóðíî-äîñóãîâûé (òâîð÷åñêèé) öåíòð</div>-->
-                        </a>
-                        
-                        
-                        <menu class="clearfix l-menu-block" id="menu">
-                            <li class="active"><a href="/">Главная</a></li>
-                            <li><a href="/sveden/">Сведения об образовательной организации</a></li>
-                            <li><a href="/sveden/document/">Документы</a></li>
-                            <li><a href="/timetable/">Расписание</a></li>
-                            <li><a href="/people/">Коллектив</a></li>
-                            <li><a href="/news/">Новости</a></li>
-                            <li><a href="/media/">Медиа</a></li>
-                            <li><a href="/contacts/">Контакты</a></li>
-                        </menu>
-                        <button class="l-menu-btn" id="menu-btn"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="wrapper-slider slider-new">
-        <!--<div class="container">-->
-            <!--<div class="row">-->
-                <!--<div class="col-lg-12">-->
-                    <div class="slider-main">
-                        <div class="swiper-container" id="slider-main">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/slide-1.jpg')">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="main-wrapper">
-                                                    <div class="slider-wrapper-text">
-                                                        <div class="wrapper-child-text">
-                                                            <div class="slider-main-title-min">Культурно-досуговый центр</div>
-                                                            <div class="slider-main-title">Happy people</div>
-                
-                                                            <div class="slider-main-text">Небольшой текст, описывающий преимущество Вашего культурно-досугового центра.</div>
-                                                            <a class="btn btn-blue" href="/index.php" target="_blank">Подрбнее</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="slider-main-image"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    
-                                </div>
-                                <div class="swiper-slide" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/slide-2.jpg')">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="main-wrapper">
-                                                    <div class="slider-wrapper-text">
-                                                        <div class="wrapper-child-text">
-                                                            <div class="slider-main-title-min">Культурно-досуговый центр</div>
-                                                            <div class="slider-main-title">Happy people</div>
-                
-                                                            <div class="slider-main-text">Небольшой текст, описывающий преимущество Вашего культурно-досугового центра.</div>
-                                                            <a class="btn btn-blue" href="/index.php" target="_blank">Подрбнее</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="slider-main-image"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-main-pagination"></div>
-                        
-                        </div>
-                        <div class="slider-main-btn slider-main-prev"></div>
-                        <div class="slider-main-btn slider-main-next"></div>
-                    </div>
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    </div>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="news-calendar">
-                    <div class="timelineLight">
-                        <div class="timeline_items">
-                            <div class="item" data-id="15/08/2012" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." data-count="11" style="padding-left: 0px; padding-right: 0px; margin-left: 5px; margin-right: 5px; float: left; position: relative; user-select: none;">
-                                <a class="image_rollover_bottom con_borderImage" data-description="ZOOM IN" href="" rel="" style="user-select: none;">
-                                    <img src="" alt="" style="user-select: none;">
-            
-                                    <div class="image_roll_glass" style="user-select: none; display: none;"></div><div class="image_roll_zoom" style="left: 0px; top: 100%; user-select: none;"></div></a>
-                                <h2 style="user-select: none;">AUGUST, 26</h2>
-                                <span style="user-select: none;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...</span>
-                                <div class="read_more" data-id="26/08/2012" data-count="11" style="user-select: none;">Read more</div>
-                            </div>
-                        </div>
-                        
-                    </div>
+<section>
 
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <h1 class="c-header c-header-margin hidden">Фотогалерея</h1>
-                <main class="c-article" id="main-article">
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="c-title-block c-title-block-margin">
-                                    <div class="c-title">Фотогалерея</div>
-                                </div>
-                            </div>
-                            
-                            
-                            <div class="col-lg-12">
-                                <div class="clearfix photogallery" id="bx_3099439860_771">
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/0935fed55d711ed34ac8ded25e490d97.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/0935fed55d711ed34ac8ded25e490d97.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/534977c1f63725355331f359342e09f2.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/534977c1f63725355331f359342e09f2.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/2756a60f463071a06a0e93dbb23dd665.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/2756a60f463071a06a0e93dbb23dd665.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/f4b02ec34ca6f1a88ce69605b320ed7e.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/f4b02ec34ca6f1a88ce69605b320ed7e.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/767ef24fa54901ff7af0bd15e177507e.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/767ef24fa54901ff7af0bd15e177507e.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/7cffc29ddb738ae7f52ca20015acd9b4.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/7cffc29ddb738ae7f52ca20015acd9b4.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/59cc56ac4bc78e73df565a34a39cfc0c.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/59cc56ac4bc78e73df565a34a39cfc0c.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="photogallery-image">
-                                        <div class="photogallery-image-block" style="background-image: url('./bitrix/templates/creative_mibok_s2/img/cde33c71edbfc25739754053cdb19315.jpg')"></div>
-                                        <a rel="group1" href="./bitrix/templates/creative_mibok_s2/img/cde33c71edbfc25739754053cdb19315.jpg" class="fancybox photogallery-image-link">
-                                            <div>
-                                                <div class='visible-eye'></div>
-                                                <time>27.10.2016</time>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="photogallery-btn-block">
-                                    <a href="/media/photo/2016/771/" class="btn btn-blue">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                </main>
-            </div>
-        </div>
-    </div>
-    
-    <footer class="l-footer">
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-lg-offset-2 col-md-offset-0 col-sm-offset-0 col-lg-4 col-md-6 col-sm-6 l-footer-float">
-                    <div class="l-footer-title">
-                        НАПИШИТЕ НАМ!
-                    </div>
-                    <div id="comp_d9963703d60af30156f4d0ab20762c71">
-                        
-                        <div class="wrapper_consent_footer">
-                            
-                            <form name="iblock_add" action="/" method="post" enctype="multipart/form-data" class="l-footer-form" id="footer">
-                                <input type="hidden" name="bxajaxid" id="bxajaxid_d9963703d60af30156f4d0ab20762c71_8BACKi" value="d9963703d60af30156f4d0ab20762c71"/><input type="hidden" name="AJAX_CALL" value="Y"/>
-                                
-                                <input type="hidden" name="sessid" id="sessid" value="a0a385e6021e9574f3879358931f5127"/> 
-                                <label><input type="text" placeholder="Имя" name="PROPERTY[112][0]" value=""></label>
-                                <label><input type="email" placeholder="E-MAIL" name="PROPERTY[113][0]" value=""></label>
-                                <input type="hidden" name="PROPERTY[NAME][0]" size="25" value="Âåá-ôîðìà â ïîäâàëå ñàéòà"/>
-                                <label><textarea placeholder="Текст вашего сообщения" name="PROPERTY[PREVIEW_TEXT][0]"></textarea></label>
-                                
-                                
-                                <div class="form-group">
-                                    <input type="checkbox" class="checkbox" name="iblock_consent" id="iblock_consent" value="Y"><label for="iblock_consent" data-toggle="modal" data-target="#myModalConsent">Нажимая кнопку «Отправить сообщение», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных</label>
-                                </div>
-                                <input type="submit" name="iblock_submit" class="btn btn-blue l-footer-submit" id="fire_footer" value="Отправить сообщение"/>
-                            </form>
-                        </div>
-                                                
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 col-md-6 col-sm-6 l-footer-float">
-                    <div class="row">
-                        
-                        <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 col-lg-push-6 col-md-push-6 col-sm-push-8">
-                            
-                            <div class="l-footer-title">
-                                ПОМОЩЬ
-                            </div>
-                            <div class="l-footer-block">
-                                
-                                <ul>
-                                    <li><a href="/">Главная</a></li>
-                                    <li><a href="/search/map/">Карта сайта</a></li>
-                                    <li><a href="/search/">Поиск по сайту</a></li>
-                                    <li><a href="/?special_version=Y">Версия для слабовидящих</a></li>
-                                    <li><a href="/privacy/">Политика конфиденциальности</a></li>
-                                </ul>
-                            </div>
-                        
-                        </div>
-                        
-                        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-pull-6 col-md-pull-6 col-sm-pull-4 col-contacts">
-                            
-                            <div class="l-footer-title">КОНТАКТЫ</div>
-                            <div class="f-footer-block-sml">
-                                <p>
-                                    Адрес: Окская область, город Город, проезд Ленина, 1-б
-                                </p>
-                                <p>
-                                    Телефон:
-                                </p>
-                                <p>
-                                    +7 (499) 001-00-00,&nbsp;
-                                </p>
-                                <p>
-                                    +7 (499) 002-00-00<br>
-                                </p>
-                                <p>
-                                    E-mail:&nbsp;<a href="mailto:test@mail.ru">test@mail.ru</a>
-                                </p>
-                                <p>
-                                    <br>
-                                </p></div>
-                            <div class="f-footer-block-sml">
-                                <p>
-                                    © 2018 КУЛЬТУРНО-ДОСУГОВЫЙ ЦЕНТР. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
-                                </p>
-                                <p>
-                                    <br>
-                                </p></div>
-                            <div class="wrapper-social">
-                                <a href="#" class="icon-social-vk"></a>
-                                <a href="#" class="icon-social-ok"></a>
-                                <a href="#" class="icon-social-fb"></a>
-                                <a href="#" class="icon-social-tw"></a>
-                                <a href="#" class="icon-social-yt"></a>
-                                <a href="#" class="icon-social-inst"></a>
-                                <a href="#" class="icon-social-gplus"></a></div>
-                        
-                        </div>
-                        
-                        
-                        <div class='mibok-informer-counter col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-right'>
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
+    <!--<a href="home.html" class="logo" target="_blank">-->
+        <!--<img src="img/logonew.png" alt="">-->
+    <!--</a>-->
+    <h1>НГКЦ</h1>
 
-<!--</div>-->
+    <ol>
+        <li class="item "><a target="_blank" href="home.html">Главная</a></li>
+        <li class="item "><a target="_blank" href="event.html">Карточка события</a></li>
+        <li class="item "><a target="_blank" href="interview.html">Опрос</a></li>
+    </ol>
+  <!--<a href="components.html">Компоненты</a>-->
+</section>
+
 </body>
 </html>

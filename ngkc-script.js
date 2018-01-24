@@ -1,39 +1,15 @@
 $(function () {
 
-
-
-
-    // light
-    // $('.timelineLight').timeline({
-    //     openTriggerClass : '.read_more',
-    //     startItem : '15/08/2012'
-    // });
-
-
-
-
-
     $(".range-slider").ionRangeSlider({
         grid: true,
         from: 3,
         values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     });
 
-
-    // var $slide_1 = $('#int-info'),
-    // 	$slide_1_value = $('#int-info').val(),
-    // 	$slide_1_parent = $slide_1.parents('.interview-item__body').find('.interview-item__value').children('span');
-
-    // $slide_1_parent.html($slide_1_value);
-
-
     function addText(elem) {
-
-
         var inputValue = +$(elem).val();
         var numHtml = $(elem).parents('.interview-item__rating').siblings('.interview-item__value').children('.interview-value');
         var textHtml = $(elem).parents('.interview-item__rating').siblings('.interview-item__value').children('.interview-value-txt');
-
         var $word = wordChange(inputValue);
 
         function wordChange(number) {
@@ -53,13 +29,11 @@ $(function () {
         }
         numHtml.html(inputValue);
         textHtml.html($word);
-
     }
 
     addText('#int-info');
     addText('#int-service');
     addText('#int-worker');
-
 
     $('#int-info').on('change', function () {
         addText(this);
@@ -72,7 +46,5 @@ $(function () {
     $('#int-worker').on('change', function () {
         addText(this);
     });
-
-
 
 });

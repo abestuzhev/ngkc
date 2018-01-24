@@ -88,6 +88,14 @@
 .interview {
     margin-top: 30px;
 }
+
+.interview__title {
+    font-size: 16px;
+    color: #0e171c;
+    margin: 30px 0 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .interview * {
     box-sizing: border-box;
 }
@@ -108,6 +116,12 @@
     display: block;
 }
 
+.interview-item__body {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+}
+
 .interview-item__rating {
     float: left;
     width: 80%;
@@ -121,12 +135,15 @@
     float: right;
     padding:  34px 58px;
     text-align:  center;
-    line-height: 60px;
     font-size:  14px;
     color: #3aa16b;
     background-color: #f5f6fa;
     text-transform: uppercase;
     border-left:  2px solid #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .interview-item__message {
@@ -223,282 +240,6 @@
 }
 
 
-
-/*timeline*/
-
-
-/*TimeLine LIGHT CSS*/
-
-.timelineLight {
-    display:none;
-    font-size:14px;
-    margin:0;
-    text-align:center;
-}
-.timelineLoader {
-    width:100%;
-    text-align:center;
-    padding:150px 0;
-}
-
-
-/* fixed line holder */
-.timelineLight .timeline_line {
-    margin-top:10px;
-    margin-bottom:10px;
-    width:900px;
-}
-
-/* full (including months that are not shown) line holder */
-.timelineLight .t_line_holder {
-    height:80px;
-    background:url('img/line.jpg') repeat-x 0px 39px;
-}
-
-/* 2 months are stored in one view */
-.timelineLight .t_line_view {
-    height:20px;
-    width:900px;
-}
-
-
-
-/* holder for 1 month (constist of nodes and month caption) - we use borders to separate months thats why it has width 2px less then 50% */
-.timelineLight .t_line_m {
-    margin-top:35px;
-    height:10px;
-    border-left:1px solid #545454;
-    border-right:1px solid #545454;
-    width:448px;
-}
-
-/* month on the right side - has left set at 459 so border would overlap border from first element (to evade duplicated borders) */
-.timelineLight .t_line_m.right {
-    left:449px;
-    width:449px;
-}
-
-/* month caption */
-.timelineLight h4.t_line_month {
-    margin:-30px 0 0;
-    color:#545454;
-}
-
-
-/* node on the timeline */
-.timelineLight a.t_line_node {
-    text-decoration:none;
-    padding:38px 0 4px;
-    height:10px;
-    font-size:12px;
-    top:-25px;
-    background:url('img/dot.png') no-repeat center 24px;
-    color:#141817;
-}
-.timelineLight a.t_line_node:hover {
-    background:url('img/dot-rollover.png') no-repeat center 24px;
-}
-.timelineLight a.t_line_node.active {
-    background:url('img/dot-selected.png') no-repeat center 24px;
-}
-
-/* node description */
-.timelineLight .t_node_desc {
-    background: rgba(26,134,172,0.9);
-    top:0;
-    color:#fff;
-    padding:1px 5px;
-}
-
-/* descriptions on right side go from right to left */
-.timelineLight .t_line_m.right .t_node_desc {
-    right:0;
-}
-
-/* line arrow left */
-.timelineLight #t_line_left {
-    cursor:pointer;
-    left:-30px;
-    top:30px;
-    width:14px;
-    height:19px;
-    background:url('img/arrow.png') no-repeat left top;
-}
-
-.timelineLight #t_line_left:hover {
-    background:url('img/arrow.png') no-repeat left bottom;
-}
-
-/* line arrow right */
-.timelineLight #t_line_right {
-    cursor:pointer;
-    right:-30px;
-    top:30px;
-    width:14px;
-    height:19px;
-    background:url('img/arrow.png') no-repeat right top;
-}
-
-.timelineLight #t_line_right:hover {
-    background:url('img/arrow.png') no-repeat right bottom;
-}
-.timelineLight {
-    display:none;
-}
-
-/* items container */
-.timelineLight .timeline_items {
-    padding:10px 0;
-}
-
-/* single item (margines set from javascript) */
-.timelineLight .tl_item {
-    height:350px;
-    text-align:center;
-    background:url('img/background-white.jpg') repeat;
-    color:#545454;
-    -moz-box-shadow: -3px 1px 6px rgba(0,0,0,0.4);
-    -webkit-box-shadow: -3px 1px 6px rgba(0,0,0,0.4);
-    box-shadow: -3px 1px 6px rgba(0,0,0,0.4);
-    width:200px;
-}
-.timelineLight .tl_item.item_node_hover {
-    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
-    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
-}
-/* ----- content - non-plugin elements ----- */
-.timelineLight .tl_item img {
-    margin-top:0;
-    width:200px;
-}
-
-.timelineLight .con_borderImage {
-    border-bottom:5px solid #1a86ac;
-}
-
-.timelineLight .tl_item span{
-    display:block;
-    margin:0px 20px 10px;
-    height: 150px;
-}
-.timelineLight .tl_item .read_more {
-
-    font-size:20px;
-    float:right;
-    color:#ffffff;
-    background: rgba(0,0,0,0.35);
-    cursor:pointer;
-}
-.timelineLight .tl_item .read_more:hover {
-    background:rgb(26,134,172);
-}
-/* ----------------------------------------- */
-
-/* item details (margines set from javascript) */
-.timelineLight .item_open {
-    height:350px;
-    background:url('img/background.jpg') repeat;
-    position:relative;
-    color:#545454;
-    z-index:2;
-    -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.4);
-    -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4);
-    box-shadow: 0px 0px 6px rgba(0,0,0,0.4);
-    width:490px;
-
-}
-
-/* item details content wrapper (used for animation - shuld have same width as .item_open) */
-.timelineLight .item_open_cwrapper {
-    width:490px;
-    height:100%;
-}
-
-.timelineLight .item_open_content {
-    width:100%;
-    height:100%;
-    position:relative;
-}
-
-.timelineLight .item_open_content .ajaxloader {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin:-10px 0 0 -100px;
-
-}
-
-/* ----- content - non-plugin elements ----- */
-.timelineLight .timeline_open_content {
-    padding:30px;
-    padding-top: 50px;
-}
-
-.timelineLight .item_open h2 {
-    margin-top:10px;
-    padding-top:0;
-    font-size:28px;
-}
-.timelineLight .item_open .t_close {
-    position:absolute;
-    top:10px;
-    right:10px;
-    padding:2px 8px 2px 10px;
-    font-size:14px;
-    color:#ffffff;
-    background: rgba(0,0,0,0.25);
-    cursor:pointer;
-    z-index:2;
-}
-
-.timelineLight .item_open .read-more {
-    position:absolute;
-    top:300px;
-    right:40px;
-    padding:2px 8px 2px 10px;
-    font-size:14px;
-    cursor:pointer;
-    z-index:2;
-}
-
-
-
-.timelineLight .item_open .t_close:hover {
-    background:rgb(26,134,172);
-}
-/* ----------------------------------------- */
-
-/* left/right controles */
-.timelineLight .t_controles {
-    margin:10px auto;
-    text-align:center;
-}
-.timelineLight .t_left,
-.timelineLight .t_right {
-    display:inline-block;
-    height:50px;
-    width:29px;
-    margin:10px;
-    cursor:pointer;
-}
-.timelineLight .t_left,
-.timelineLight .t_left:hover:active {
-    background: url('img/big-arrow.png') no-repeat left top;
-}
-.timelineLight .t_left:hover {
-    background: url('img/big-arrow.png') no-repeat left bottom;
-}
-
-.timelineLight .t_right,
-.timelineLight .t_right:hover:active{
-    background: url('img/big-arrow.png') no-repeat right top;
-}
-
-.timelineLight .t_right:hover {
-    background: url('img/big-arrow.png') no-repeat right bottom;
-}
-
 /* -----------------------------------------------------------------------*/
 /* ------------------------------ RESPONSIVE -----------------------------*/
 /* -----------------------------------------------------------------------*/
@@ -506,6 +247,13 @@
 
 
 /* --- 768px --- */
+@media screen and (max-width:1030px) {
+    .l-header-quality {
+        position: absolute;
+        top: 205%;
+        left: 15px;
+    }
+}
 @media screen and (max-width:980px) {
 
     .timelineLight .timeline_line {
@@ -695,6 +443,45 @@
     background-size: cover;
 }
 
+.l-instructor-header-block:after, .c-title-block.c-title-block-margin:after {
+    background-color: #3aa16b;
+}
+
+
+.events {
+    margin-top: 30px;
+    padding: 20px 0 20px;
+    background: url(./bitrix/templates/creative_mibok_s2/img/bg-event.jpg) 50% 50% no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.events__title {
+    font-size: 16px;
+    color: #0e171c;
+    text-align: center;
+    /*margin: 50px 0 0;*/
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.l-header-version button a {
+    border: none;
+    color: #ffffff;
+}
+
+.l-menu-block .active a {
+    color: #3aa16b;
+}
+
+.slider-main  {
+    position: relative;
+}
+
+.slider-main .slider-main-btn {
+    top: 48%;
+}
+
 @media screen and (max-width: 980px) {
     .event-nav {
         padding-bottom: 35px;
@@ -703,6 +490,24 @@
         top: auto;
         bottom: 6px;
         margin: 0;
+    }
+
+
+    .l-header-version {
+        border: 3px solid #000;
+        margin-left: -7px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .l-header-version a {
+        border: none;
+        line-height: 1;
+    }
+    .l-header-version button a {
+        color: #ffffff;
     }
 }
 
@@ -717,5 +522,83 @@
     .event-content__img img {
         width: 100%;
         height: auto;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .interview-item__rating,
+    .interview-item__value {
+        padding: 24px 28px;
+    }
+
+    .l-header-quality {
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+        top: 100%;
+    }
+
+    .l-menu {
+        margin-top: 15px;
+    }
+
+    .l-menu-wrapper {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 560px) {
+    .l-header-version {
+        padding: 0;
+    }
+    .l-header-version > span {
+        display: none;
+    }
+
+    .l-header-version button {
+        text-align: center;
+    }
+    .l-header-version button a {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    .interview-item__rating,
+    .interview-item__value {
+        float: none;
+        width: 100%;
+    }
+    .interview-item__value {
+        margin-top: 4px;
+        padding: 10px;
+    }
+
+    .interview-item__message {
+        padding: 20px 16px 21px;
+    }
+
+    .interview-item__message textarea {
+        margin-bottom: 0;
+    }
+
+    .l-menu-logo img {
+        width: 190px;
+    }
+
+    .l-header-quality::before {
+        content: '';
+        position: absolute;
+        top: 22px;
+        left: 14px;
+    }
+
+    .l-header-quality {
+        left: auto;
+        width: 30px;
+        height: 100%;
+        top: 0;
+        right: 35px;
+        text-indent: -999px;
     }
 }
